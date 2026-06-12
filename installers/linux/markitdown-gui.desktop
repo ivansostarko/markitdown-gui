@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=MarkItDown GUI
+GenericName=Document to Markdown Converter
+Comment=Convert documents to AI-ready Markdown with Microsoft MarkItDown
+Exec=/opt/markitdown-gui/markitdown-gui
+Icon=markitdown-gui
+Terminal=false
+Categories=Office;Utility;FileTools;
+Keywords=markdown;converter;pdf;docx;ai;
+StartupWMClass=MarkItDownGUI

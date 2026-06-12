@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.tox/
+.pytest_cache/
+.ruff_cache/
+
+# PyInstaller
+*.manifest
+
+# Installers / packaging output
+installers/windows/Output/
+*.deb
+*.AppImage
+*.zip
+!assets/**/*.zip
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

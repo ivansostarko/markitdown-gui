@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "markitdown-gui"
+version = "1.0.0"
+description = "A modern desktop GUI for Microsoft's MarkItDown — convert documents to AI-ready Markdown."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ivan Sostarko", email = "ivan.sostarko@hotmail.com" }]
+keywords = ["markdown", "markitdown", "converter", "gui", "pdf", "docx", "ai"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications",
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+    # Not markitdown[all]: the "all" extra pulls azure-ai-contentunderstanding,
+    # which only ships pre-releases and makes pip's resolver fail (it then
+    # backtracks into old versions pinned to onnxruntime<=1.20.1 on Windows).
+    # We list the extras the GUI actually uses instead.
+    "markitdown[pdf,docx,pptx,xlsx,xls,outlook,audio-transcription]>=0.1.6",
+    "customtkinter>=5.2.2",
+    "tkinterdnd2>=0.4.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=6.6",
+    "ruff>=0.4",
+    "pytest>=8",
+    "pillow>=10",
+]
+
+[project.gui-scripts]
+markitdown-gui = "markitdown_gui.app:main"
+
+[project.urls]
+Homepage = "https://github.com/ivansostarko/markitdown-gui"
+Issues = "https://github.com/ivansostarko/markitdown-gui/issues"
+Changelog = "https://github.com/ivansostarko/markitdown-gui/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
