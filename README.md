@@ -29,7 +29,7 @@ PDF · Word (`.docx`) · PowerPoint (`.pptx`) · Excel (`.xlsx`, `.xls`) · CSV/
 
 ### Windows
 
-Download `MarkItDownGUI-Setup.exe` from the [latest release](https://github.com/ivansostarko/markitdown-gui/releases) and run it.
+Download `MarkItDownGUI-Setup.exe` from the [setup folder](https://github.com/ivansostarko/markitdown-gui/blob/main/setup/windows/MarkItDownGUI-Setup_1.0.0.exe) and run it.
 
 ### Linux
 
